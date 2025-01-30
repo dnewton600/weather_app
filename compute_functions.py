@@ -39,6 +39,7 @@ def compute_avg_days_of_precip(data,city_code):
 def predict_chance_of_precip(data,city_code,month,day):
 
     data_sub = data.loc[data.NAME == city_map[city_code],['PRCP','SNOW','DATE']].reset_index(drop=True)
+    data_sub.loc[np.isnan(data_sub.SNOW),'SNOW'] = 0
 
     data_sub['precip_binary'] =  data_sub['PRCP'] + data_sub['SNOW'] > 1e-8
     data_sub['precip_binary'] = data_sub['precip_binary'].astype(np.int64)
