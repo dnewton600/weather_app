@@ -14,7 +14,7 @@ if len(sys.argv) == 1:
 if sys.argv[1] == 'days-of-precip':
 
     if sys.argv[2] not in list(compute_functions.city_map.keys()):
-        print("Invalid city code.")
+        print("Invalid city code. Valid city codes are 'bos','jnu', or 'mia'.")
         sys.exit()
 
     else:
