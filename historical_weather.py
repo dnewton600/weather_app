@@ -28,6 +28,10 @@ elif sys.argv[1] == 'chance-of-precip':
         print("Invalid city code.")
         sys.exit()
 
+    if len(sys.argv) != 5:
+        print("Invalid number of arguments.")
+        sys.exit()
+
     city_code = sys.argv[2]
     month = sys.argv[3]
     day = sys.argv[4]
